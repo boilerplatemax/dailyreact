@@ -1,7 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+body {
+    font-family: "DIN Alternate", sans-serif;
+    font-size: 16px;
+}
 *,
 *:before,
 *:after {
@@ -25,7 +28,7 @@ body {
     'Helvetica', sans-serif;
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
-  @apply text-white bg-zinc-800 antialiased;
+  @apply text-white bg-indigo-500 antialiased;
 }
 
 body {
