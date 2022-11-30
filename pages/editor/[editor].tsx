@@ -49,7 +49,7 @@ const Editor = ({ user }: { user: User }) => {
   return (
     <div className="flex justify-center height-screen-helper text-zinc-900 bg-zinc-100">
         <div className="max-w-lg mt-10">
-            <h1>Editing {userDetails?.storedata?.stores[0]?.name}</h1>
+            <h1>Editing {JSON.stringify(userDetails?.storedata?.stores[0])}</h1>
             <button onClick={func}>press me</button>
         </div>
       </div>
