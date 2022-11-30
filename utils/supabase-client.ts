@@ -2,7 +2,7 @@ import {
   createBrowserSupabaseClient,
   User
 } from '@supabase/auth-helpers-nextjs';
-import { ProductWithPrice } from 'types';
+import { ProductWithPrice, UserDetails } from 'types';
 import type { Database } from 'types_db';
 
 export const supabase = createBrowserSupabaseClient<Database>();
@@ -34,3 +34,20 @@ export const updateUserName = async (user: User, name: string) => {
     })
     .eq('id', user.id);
 };
+
+// export const getUserWithId = async (id:string): Promise<
+//   UserDetails[]
+// > => {
+//   const { data, error } = await supabase
+//     .from('users')
+//     .select('*, users(*)')
+//     .order('metadata->index')
+//     .order('unit_amount', { foreignTable: 'prices' });
+
+//   if (error) {
+//     console.log(error.message);
+//     throw error;
+//   }
+//   // TODO: improve the typing here.
+//   return (data as any) || [];
+// };

@@ -105,7 +105,7 @@ export default function Pricing({ products }: Props) {
         <div className="mt-12 space-y-4 sm:mt-16 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-6 lg:max-w-4xl lg:mx-auto xl:max-w-none xl:mx-0 xl:grid-cols-3">
           <div
                 className={cn(
-                  'rounded-lg shadow-sm divide-y divide-zinc-600 bg-indigo-500 border border-indigo-900'
+                  'rounded-lg shadow-sm divide-y divide-zinc-600 bg-indigo-600 '
                 )}
               >
                 <div className="p-6">
@@ -125,7 +125,7 @@ export default function Pricing({ products }: Props) {
                     variant="slim"
                     type="button"
                     disabled={true}
-                    className="mt-8 block w-full rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-zinc-900"
+                    className="mt-8 block w-full rounded-md py-2 text-sm font-semibold text-white text-center"
                   >
                   Subscribe
                   </Button>

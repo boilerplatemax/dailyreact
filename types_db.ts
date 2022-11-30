@@ -18,6 +18,9 @@ export interface Database {
           payment_method: Json | null;
           full_name: string | null;
           avatar_url: string | null;
+          storedata: {
+            stores: Array<object>| null;
+          };
         };
         Insert: {
           id: string;
@@ -27,6 +30,9 @@ export interface Database {
           payment_method?: Json | null;
           full_name?: string | null;
           avatar_url?: string | null;
+          storedata?: {
+            stores: Array<object>| null;
+          };
         };
         Update: {
           id?: string;
@@ -36,6 +42,10 @@ export interface Database {
           payment_method?: Json | null;
           full_name?: string | null;
           avatar_url?: string | null;
+          storedata?: {
+            stores: Array<object>| null;
+          };
+
         };
       };
       customers: {
