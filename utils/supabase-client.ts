@@ -35,19 +35,13 @@ export const updateUserName = async (user: User, name: string) => {
     .eq('id', user.id);
 };
 
-// export const getUserWithId = async (id:string): Promise<
-//   UserDetails[]
-// > => {
-//   const { data, error } = await supabase
-//     .from('users')
-//     .select('*, users(*)')
-//     .order('metadata->index')
-//     .order('unit_amount', { foreignTable: 'prices' });
-
-//   if (error) {
-//     console.log(error.message);
-//     throw error;
-//   }
-//   // TODO: improve the typing here.
-//   return (data as any) || [];
-// };
+export const updateStore = async (user: User, newStores:Array<any>) => {
+  await supabase
+    .from('users')
+    .update({
+      storedata:{
+        stores:newStores
+      }
+    })
+    .eq('id', user.id);
+};

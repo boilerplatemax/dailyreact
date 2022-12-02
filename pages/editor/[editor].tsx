@@ -1,32 +1,25 @@
+import { useState, ReactNode } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import { useRouter } from 'next/router';
 import { User } from '@supabase/supabase-js';
+
 import { useUser } from 'utils/useUser';
+import Button from '@/components/ui/Button';
+import { updateUserName, updateStore } from 'utils/supabase-client';
 import { withPageAuth } from '@supabase/auth-helpers-nextjs';
-import { createClient } from '@supabase/supabase-js'
+
 type Editor = {
   id:string;
 };
 export const getServerSideProps = withPageAuth({ redirectTo: '/signin' });
 const configValue : string = (process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY as string)
-const supabase = createClient('https://rwwfhjyyozrcuicvdgih.supabase.co', configValue)
 
-const func = async()=>{
-  const { data, error } = await supabase
-  .from('users')
-  .update({
-    storedata: {
-      stores:[
-        {name: 'Pet store site'},
-        {name: 'skate shop site'}
-      ]
-    }
-  })
-  .eq('address->postcode', 90210)
-  .select()
-}
+
 
 const Editor = ({ user }: { user: User }) => {
   const {userDetails } = useUser();
+  const [storeData,setStoreData]=useState(userDetails?.storedata?.stores[0])
+  const allStores = userDetails?.storedata?.stores
   const router = useRouter();
   const store = {id:router?.query?.editor};
   const userId=userDetails?.id
@@ -45,15 +38,30 @@ const Editor = ({ user }: { user: User }) => {
         </div>
       </section>
     );
-
+    const changeHandler=(e:any)=>{
+      const newObj={
+        name:e.target.value,
+        id:uuidv4()
+      }
+      setStoreData({...storeData,})
+      }
   return (
     <div className="flex justify-center height-screen-helper text-zinc-900 bg-zinc-100">
         <div className="max-w-lg mt-10">
-            <h1>Editing {JSON.stringify(userDetails?.storedata?.stores[0])}</h1>
-            <button onClick={func}>press me</button>
+            <h1>Editing {userDetails?.storedata?.stores[0]}</h1>
+            <form>
+            <label>
+              Name:
+              <input type="text" name="name" onChange={e=>changeHandler(e)}/>
+            </label>
+            <Button onClick={()=>updateStore(user, [storeData])}>Save</Button>
+          </form>
+            
         </div>
       </div>
   );
 };
-
+// const func = (user:any) =>{
+//   updateUserName(user, 'bob')
+// }
 export default Editor;

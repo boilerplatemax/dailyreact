@@ -3,7 +3,7 @@
 }
 
 .root:hover {
-  @apply bg-indigo-800 text-white border border-white;
+  @apply bg-blue-800 text-white border border-white;
 }
 
 .root:focus {
@@ -24,7 +24,7 @@
 
 .disabled,
 .disabled:hover {
-  @apply text-zinc-400 border-zinc-600 bg-indigo-700 cursor-not-allowed;
+  @apply text-zinc-400 border-zinc-600 bg-blue-700 cursor-not-allowed;
   filter: grayscale(1);
   -webkit-transform: translateZ(0);
   -webkit-perspective: 1000;

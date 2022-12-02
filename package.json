@@ -2,6 +2,7 @@
   "name": "nextjs-subscription-payments",
   "version": "0.0.0",
   "license": "MIT",
+  "proxy": "http://localhost:3000",
   "scripts": {
     "dev": "next",
     "build": "next build",
@@ -14,19 +15,23 @@
     "@supabase/auth-helpers-react": "^0.3.0",
     "@supabase/auth-ui-react": "^0.2.6",
     "@supabase/supabase-js": "^2.0.0",
+    "axios": "^1.2.0",
     "classnames": "2.3.1",
+    "cors": "^2.8.5",
     "next": "^12.2.5",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-merge-refs": "1.1.0",
     "stripe": "8.201.0",
     "swr": "1.2.0",
-    "tailwindcss": "3.0.18"
+    "tailwindcss": "3.0.18",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "@types/classnames": "2.3.1",
     "@types/node": "^17.0.13",
     "@types/react": "^17.0.38",
+    "@types/uuid": "^9.0.0",
     "autoprefixer": "^10.4.2",
     "postcss": "8.4.5",
     "prettier": "2.5.1",
