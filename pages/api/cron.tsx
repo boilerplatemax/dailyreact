@@ -23,7 +23,8 @@ export default async function handler(
         
         res.status(200).json({ success: true });
         temp=Math.random()
-        axios.put('http://localhost:3001/data',{
+        //set data here
+        axios.post('/data',{
             message: temp
          }) 
         
