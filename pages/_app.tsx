@@ -11,6 +11,7 @@ import { MyUserContextProvider } from 'utils/useUser';
 import type { Database } from 'types_db';
 
 export default function MyApp({ Component, pageProps }: AppProps) {
+  
   const [supabaseClient] = useState(() =>
     createBrowserSupabaseClient<Database>()
   );
