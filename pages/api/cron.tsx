@@ -1,6 +1,8 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import db from 'data/db.json'
-let temp:Object = 123
+import axios from 'axios'
+let temp:Object = db
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse,
@@ -21,6 +23,9 @@ export default async function handler(
         
         res.status(200).json({ success: true });
         temp=Math.random()
+        axios.put('http://localhost:3001/data',{
+            message: temp
+         }) 
         
       } else {
         res.status(401).json({ success: false });
