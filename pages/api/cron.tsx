@@ -1,6 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import db from 'data/db.json'
-import axios from 'axios'
+const fs = require('fs');
+let db =require('data/db.json');
+
 let temp:Object = db
 
 export default async function handler(
@@ -23,10 +24,8 @@ export default async function handler(
         
         res.status(200).json({ success: true });
         temp=Math.random()
-        axios.put('http://localhost:3001/data',{
-            temp
-         }) 
-        
+        const output = {message:temp}
+        fs.writeFileSync('./data/db.json', JSON.stringify(output, null, 4));
       } else {
         res.status(401).json({ success: false });
       }
