@@ -1,5 +1,5 @@
 import React,{useEffect, useState} from 'react'
-import handler from '../pages/api/cron'
+import axios from 'axios'
 
 
 export default function Game () {
@@ -7,7 +7,7 @@ export default function Game () {
     const [isLoading, setIsLoading] = useState(false)
     useEffect(() => {
         setIsLoading(true)
-        fetch('https://api.agify.io/?name=max')
+        fetch('/api/cron')
             .then(response => response.json())
             .then(data => {
                 setToDos(data)

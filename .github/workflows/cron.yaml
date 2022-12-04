@@ -1,13 +1,13 @@
-name: daily-cron
-on:
-  schedule:
-    - cron: every 15 mins
-jobs:
-  cron:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Call our API route
-        run: |
-          curl --request POST \
-          --url 'https://saas-hazel.vercel.app/api/cron' \
-          --header 'Authorization: Bearer ${{ secrets.API_SECRET_KEY }}'
+# name: daily-cron
+# on:
+#   schedule:
+#     - cron: every 15 mins
+# jobs:
+#   cron:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Call our API route
+#         run: |
+#           curl --request POST \
+#           --url 'https://saas-hazel.vercel.app/api/cron' \
+#           --header 'Authorization: Bearer ${{ secrets.API_SECRET_KEY }}'
