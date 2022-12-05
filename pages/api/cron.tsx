@@ -23,9 +23,9 @@ export default async function handler(
       if (authorization === `Bearer ${process.env.API_SECRET_KEY}`) {
         
         res.status(200).json({ success: true });
-        temp=Math.random()
-        const output = {message:temp}
-        fs.writeFileSync('data/db.json', JSON.stringify(output, null, 4));
+        // temp=Math.random()
+        // const output = {message:temp}
+        // fs.writeFileSync('data/db.json', JSON.stringify(output, null, 4));
       } else {
         res.status(401).json({ success: false });
       }
