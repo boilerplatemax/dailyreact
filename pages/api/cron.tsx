@@ -25,18 +25,12 @@ export default async function handler(
         res.status(200).json({ success: true });
         temp=Math.random()
         const output = {message:temp}
-        fs.writeFileSync('./data/db.json', JSON.stringify(output, null, 4));
+        fs.writeFileSync('data/db.json', JSON.stringify(output, null, 4));
       } else {
         res.status(401).json({ success: false });
-        temp=Math.random()
-        const output = {message:temp}
-        fs.writeFileSync('./data/db.json', JSON.stringify(output, null, 4));
       }
     } catch (err:any) {
       res.status(500).json({ statusCode: 500, message: err.message });
-      temp=Math.random()
-      const output = {message:temp}
-      fs.writeFileSync('./data/db.json', JSON.stringify(output, null, 4));
     }
   } else {
     res.setHeader('Allow', 'POST');
