@@ -45,3 +45,19 @@ export const updateStore = async (user: User, newStores:Array<any>) => {
     })
     .eq('id', user.id);
 };
+
+export const getMessage = async () => {
+  const { data, error } = await supabase
+  .from('publicdata')
+  .select()
+  return (data as any);
+};
+export const setMessage = async (note:string) => {
+  await supabase
+    .from('publicdata')
+    .update({
+      description:note
+    })
+    .eq('id', 1)
+
+};

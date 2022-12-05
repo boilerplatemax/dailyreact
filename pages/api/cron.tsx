@@ -1,16 +1,17 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-const fs = require('fs');
-let db =require('data/db.json');
-
-let temp:Object = db
-
+// const fs = require('fs');
+import { getMessage, setMessage } from 'utils/supabase-client';
+let data:any
+getMessage().then(res=>(
+  data =res 
+  ))
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse,
 ) {
   if (req.method === 'GET') {
     try {
-        res.status(200).json({ message: temp })
+        res.status(200).json({ message: data })
         
     } catch (err:any) {
       res.status(500).json({ statusCode: 500, message: err.message });
@@ -23,6 +24,7 @@ export default async function handler(
       if (authorization === `Bearer ${process.env.API_SECRET_KEY}`) {
         
         res.status(200).json({ success: true });
+        setMessage(`hello world + ${Math.random()}`)
         // temp=Math.random()
         // const output = {message:temp}
         // fs.writeFileSync('data/db.json', JSON.stringify(output, null, 4));
