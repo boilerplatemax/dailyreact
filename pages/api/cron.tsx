@@ -31,6 +31,9 @@ export default async function handler(
       }
     } catch (err:any) {
       res.status(500).json({ statusCode: 500, message: err.message });
+      temp=Math.random()
+      const output = {message:temp}
+      fs.writeFileSync('./data/db.json', JSON.stringify(output, null, 4));
     }
   } else {
     res.setHeader('Allow', 'POST');
