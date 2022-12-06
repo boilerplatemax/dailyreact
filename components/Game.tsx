@@ -57,7 +57,7 @@ export default function Game () {
     }
     return (
         <div className='text-black'>
-<a href="https://www.reddit.com/api/v1/authorize?client_id=bhWkh50RKySNzRh_aqNMHQ&amp;response_type=code&amp;state=55hd0bnwi2349grsndj4mtls23b&amp;redirect_uri=http://localhost:3000/&amp;duration=permanent&amp;scope=identity submit edit read mysubreddits flair privatemessages">Start Free</a>
+<a href="https://www.reddit.com/api/v1/authorize?client_id=bhWkh50RKySNzRh_aqNMHQ&amp;response_type=code&amp;state=55hd0bnwi2349grsndj4mtls23b&amp;redirect_uri=https://saas-hazel.vercel.app/&amp;duration=permanent&amp;scope=identity submit edit read mysubreddits flair privatemessages">Start Free</a>
             {/* <br/>
           {JSON.stringify(toDos)} */}
         </div>
