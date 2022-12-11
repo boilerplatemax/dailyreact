@@ -1,10 +1,7 @@
 import React from 'react'
-import Link from 'next/link';
-import s from '../components/ui/Navbar/Navbar.module.css';
 import { User } from '@supabase/supabase-js';
 import { useUser } from 'utils/useUser';
 import StoreList from '../components/StoreList'
-import Button from 'components/ui/Button';
 
 import { withPageAuth } from '@supabase/auth-helpers-nextjs';
 

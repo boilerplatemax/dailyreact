@@ -1,5 +1,5 @@
 import Pricing from 'components/Pricing';
-import Game from 'components/Game'
+import Home from '@/components/Home'
 import { getActiveProductsWithPrices } from 'utils/supabase-client';
 import { Product } from 'types';
 import { GetStaticPropsResult } from 'next';
@@ -9,7 +9,7 @@ interface Props {
 }
 
 export default function PricingPage({ products }: Props) {
-  return <Game/>;
+  return <Home/>;
 }
 
 export async function getStaticProps(): Promise<GetStaticPropsResult<Props>> {

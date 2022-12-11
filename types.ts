@@ -28,6 +28,8 @@ export interface UserDetails {
   first_name: string;
   last_name: string;
   full_name?: string;
+  refresh_token?:string;
+  auth_token?:string;
   avatar_url?: string;
   storedata?: {
     stores: Array<object>;

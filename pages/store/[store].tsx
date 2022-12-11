@@ -13,7 +13,6 @@ const Store = () => {
     <div className="flex justify-center height-screen-helper bg-zinc-100 text-black">
         <div className="flex flex-col justify-between max-w-lg p-3 m-auto w-80 rounded-lg border border-indigo-900">
             <h1>hello there fellow bitches {store.id}</h1>
-
         </div>
       </div>
   );

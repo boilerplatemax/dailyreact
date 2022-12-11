@@ -6,6 +6,7 @@ import Logo from 'components/icons/Logo';
 import { getURL } from '@/utils/helpers';
 import { Auth, ThemeSupa } from '@supabase/auth-ui-react';
 
+
 const SignIn = () => {
   const router = useRouter();
   const user = useUser();
@@ -27,7 +28,7 @@ const SignIn = () => {
           <div className="flex flex-col space-y-40">
             <Auth
               supabaseClient={supabaseClient}
-              providers={[]}
+              providers={['google']}
               redirectTo={getURL()}
               magicLink={true}
               appearance={{

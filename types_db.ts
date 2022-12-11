@@ -17,6 +17,8 @@ export interface Database {
           billing_address: Json | null;
           payment_method: Json | null;
           full_name: string | null;
+          refresh_token:string|null;
+          auth_token:string|null;
           avatar_url: string | null;
           storedata: {
             stores: Array<object>| null;
@@ -29,6 +31,8 @@ export interface Database {
           billing_address?: Json | null;
           payment_method?: Json | null;
           full_name?: string | null;
+          refresh_token?:string|null;
+          auth_token?:string|null;
           avatar_url?: string | null;
           storedata?: {
             stores: Array<object>| null;
@@ -41,6 +45,8 @@ export interface Database {
           billing_address?: Json | null;
           payment_method?: Json | null;
           full_name?: string | null;
+          refresh_token?:string|null;
+          auth_token?:string|null;
           avatar_url?: string | null;
           storedata?: {
             stores: Array<object>| null;

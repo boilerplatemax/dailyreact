@@ -1,0 +1,50 @@
+
+.root {
+  
+  @apply bg-transparent text-light text-xs cursor-pointer rounded-2xl inline-flex px-4 leading-6 transition ease-in-out duration-150 shadow-sm font-semibold text-center justify-center uppercase py-2 border border-light items-center;
+}
+
+.root:hover {
+  @apply bg-button-hover text-main border border-transparent;
+}
+.root:hover span{
+  @apply px-2 ml-6
+}
+
+.root:focus {
+  @apply outline-none ring-2 ring-focus ring-opacity-50;
+}
+
+.root[data-active] {
+  @apply bg-button-active;
+}
+
+.loading {
+  @apply bg-loading text-light cursor-not-allowed;
+}
+
+.slim {
+  @apply py-2 transform-none normal-case;
+}
+.dark {
+
+
+  @apply bg-transparent text-black border border-black;
+}
+.dark:hover {
+
+  filter: grayscale(1);
+  -webkit-transform: translateZ(0);
+  -webkit-perspective: 1000;
+  -webkit-backface-visibility: hidden;
+  @apply bg-black text-white border border-black;
+}
+
+.disabled,
+.disabled:hover {
+  @apply text-dark border-orange bg-button-disabled cursor-not-allowed;
+  filter: grayscale(1);
+  -webkit-transform: translateZ(0);
+  -webkit-perspective: 1000;
+  -webkit-backface-visibility: hidden;
+}

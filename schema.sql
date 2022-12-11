@@ -7,6 +7,8 @@ create table users (
   id uuid references auth.users not null primary key,
   full_name text,
   avatar_url text,
+  refresh_token text,
+  auth_token text,
   storedata json,
   -- The customer's billing address, stored in JSON format.
   billing_address jsonb,
@@ -23,8 +25,8 @@ create policy "Can update own user data." on users for update using (auth.uid() 
 create function public.handle_new_user() 
 returns trigger as $$
 begin
-  insert into public.users (id, full_name, avatar_url, storedata)
-  values (new.id, new.raw_user_meta_data->>'full_name', new.raw_user_meta_data->>'avatar_url', new.storedata);
+  insert into public.users (id, full_name, avatar_url, storedata, refresh_token, auth_token)
+  values (new.id, new.raw_user_meta_data->>'full_name', new.raw_user_meta_data->>'avatar_url', new.storedata, new.refresh_token, new.auth_token);
   return new;
 end;
 $$ language plpgsql security definer;

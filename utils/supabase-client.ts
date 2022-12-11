@@ -59,5 +59,21 @@ export const setMessage = async (note:string) => {
       description:note
     })
     .eq('id', 1)
+};
 
+export const updateAuth = async (id:string, token: string) => {
+  await supabase
+    .from('users')
+    .update({
+      auth_token:token
+    })
+    .eq('id', id);
+};
+export const updateRefresh = async (user: User, token: string) => {
+  await supabase
+    .from('users')
+    .update({
+      refresh_token:token
+    })
+    .eq('id', user.id);
 };

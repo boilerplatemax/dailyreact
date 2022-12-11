@@ -37,10 +37,6 @@ const Store=(props:any)=>{
                     </span>
                   </p>
 
-                  <Link href={`/editor/${props.userId}?q=${1}`}>
-                <a className={s.link} >Editor</a>
-                </Link>
-
                 </div>
 
               </div>
