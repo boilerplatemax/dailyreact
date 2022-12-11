@@ -4,7 +4,21 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx}'
   ],
   theme: {
-    extend: { padding: { "fluid-video": "56.25%" } },
+    
+    extend: {
+      padding: { "fluid-video": "56.25%" },
+      animation: {
+        fadein1: 'fadeOut 1s ease-in-out',
+        fadein2: 'fadeOut 2s ease-in-out',
+        fadein3: 'fadeOut 3s ease-in-out',
+      },
+      keyframes: theme => ({
+        fadeOut: {
+          '0%': { opacity:0 },
+          '100%': { opacity:1 },
+        },
+      }),
+    },
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
@@ -22,6 +36,14 @@ module.exports = {
         800: '#155e75',
         900: '#164e63',
       },
+      'palette': {
+        'dark': '#09223d',
+        'main': '#12355B',
+        'light': '#436d9c',
+        'orange':'#FF570A',
+        'crimson':'#D72638'
+
+      },
       'button': {
         'disabled': '#cffafe',
         'main': '#a5f3fc',
@@ -29,9 +51,7 @@ module.exports = {
         'active': '#22d3ee',
       },
       'orange':'#FF570A',
-      'crimson': {
-        500:'#D72638'
-      },
+
       'focus':'#D72638',
       'loading':'#D72638',
    
@@ -40,7 +60,7 @@ module.exports = {
       'muted': '#a5f3fc',
       'offwhite': '#dddddd',
       
-
+      
 
     },
   },

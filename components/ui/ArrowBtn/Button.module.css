@@ -7,9 +7,9 @@
 .root:hover {
   @apply bg-button-hover text-main border border-transparent;
 }
-.root:hover span{
+/* .root:hover span{
   @apply px-2 ml-6
-}
+} */
 
 .root:focus {
   @apply outline-none ring-2 ring-focus ring-opacity-50;

@@ -8,7 +8,11 @@ import { useSupabaseClient } from '@supabase/auth-helpers-react';
 
 import { getCookies, getCookie, setCookie, deleteCookie } from "cookies-next";
 
-const Navbar = () => {
+interface Props{
+  lrg:boolean
+}
+
+const Navbar = ({lrg}:Props) => {
   const router = useRouter();
   const supabaseClient = useSupabaseClient();
   const { user } = useUser();
@@ -18,7 +22,7 @@ const Navbar = () => {
       <a href="#skip" className="sr-only focus:not-sr-only">
         Skip to content
       </a>
-      <div className="mx-auto px-8">
+      <div className={`mx-auto px-8 ${lrg&&'py-4'} navbar__anim`}>
         <div className="flex justify-between align-center flex-row py-4 md:py-6 relative">
           <div className="flex flex-1 items-center">
             <Link href="/">
@@ -32,6 +36,9 @@ const Navbar = () => {
               </Link>:null}
               <Link href="/plans">
                 <a className={s.link}>Plans</a>
+              </Link>
+              <Link href="/contact">
+                <a className={s.link}>Contact</a>
               </Link>
               {user?<Link href="/account">
                 <a className={s.link}>Account</a>

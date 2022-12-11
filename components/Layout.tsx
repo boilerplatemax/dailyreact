@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-
+import { useEffect, useState } from 'react';
 import Navbar from 'components/ui/Navbar';
 import Footer from 'components/ui/Footer';
 import { ReactNode } from 'react';
@@ -9,9 +9,18 @@ import { PageMeta } from '../types';
 interface Props {
   children: ReactNode;
   meta?: PageMeta;
+
+
 }
 
 export default function Layout({ children, meta: pageMeta }: Props) {
+
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const handleScroll = () => {
+      const position = window.pageYOffset;
+      setScrollPosition(position);
+  };
+
   const router = useRouter();
   const meta = {
     title: 'Next.js Subscription Starter',
@@ -19,6 +28,13 @@ export default function Layout({ children, meta: pageMeta }: Props) {
     cardImage: '/og.png',
     ...pageMeta
   };
+  useEffect(()=>{
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+        window.removeEventListener('scroll', handleScroll);
+    };
+  },[])
 
   return (
     <>
@@ -39,7 +55,7 @@ export default function Layout({ children, meta: pageMeta }: Props) {
         <meta name="twitter:description" content={meta.description} />
         <meta name="twitter:image" content={meta.cardImage} />
       </Head>
-      <Navbar />
+      <Navbar lrg={scrollPosition>100?true:false}/>
       <main id="skip">{children}</main>
       <Footer />
     </>

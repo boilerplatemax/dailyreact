@@ -27,7 +27,7 @@ body {
 
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
-  @apply text-white bg-main antialiased;
+  @apply text-white bg-palette-dark antialiased;
 }
 
 body {
@@ -70,3 +70,27 @@ a {
 .no-ring:focus{
   @apply ring-0
 }
+.navbar__anim{
+  @apply transform duration-500 ease-in-out;
+}
+::-webkit-scrollbar {
+  width: 10px;
+
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  @apply bg-palette-light
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+
+
+  @apply bg-palette-main
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-palette-orange
+} 
