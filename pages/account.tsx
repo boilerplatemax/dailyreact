@@ -73,7 +73,6 @@ export default function Account({ user }: { user: User }) {
       <div className="p-4">
         <Card
           title="Your Plan"
-          
           description={
             subscription
               ? `You are currently on the ${subscription?.prices?.products?.name} plan.`
@@ -109,10 +108,9 @@ export default function Account({ user }: { user: User }) {
             )}
           </div>
         </Card>
-
       </div>
-      {userDetails?console.log('userDetails',userDetails):null}
-      {user?console.log('user',user):null}
+      {userDetails ? console.log('userDetails', userDetails) : null}
+      {user ? console.log('user', user) : null}
     </section>
   );
 }

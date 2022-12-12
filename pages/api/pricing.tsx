@@ -65,7 +65,7 @@ export default function Account({ user }: { user: User }) {
           <h1 className="text-4xl font-extrabold text-white sm:text-center sm:text-6xl">
             Hello
           </h1>
-          </div>
+        </div>
       </div>
     </section>
   );

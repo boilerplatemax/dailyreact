@@ -2,8 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 body {
-    font-family: "DIN Alternate", sans-serif;
-    font-size: 16px;
+  font-family: 'DIN Alternate', sans-serif;
+  font-size: 16px;
 }
 *,
 *:before,
@@ -24,10 +24,8 @@ html {
 
 html,
 body {
-
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
-  @apply text-white bg-palette-dark antialiased;
 }
 
 body {
@@ -60,37 +58,40 @@ a {
 .hide-scroll-bar::-webkit-scrollbar {
   display: none;
 }
-.home__project{
-  width:400px!important;
-  @apply bg-offwhite
+.home__project {
+  width: 400px !important;
 }
-.no-ring{
-  @apply ring-0
+.no-ring {
+  @apply ring-0;
 }
-.no-ring:focus{
-  @apply ring-0
+.no-ring:focus {
+  @apply ring-0;
 }
-.navbar__anim{
+.navbar__anim {
   @apply transform duration-500 ease-in-out;
 }
 ::-webkit-scrollbar {
   width: 10px;
-
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  @apply bg-palette-light
+  @apply bg-palette-main;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-
-
-  @apply bg-palette-main
+  @apply bg-palette-light;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-palette-orange
-} 
+  @apply bg-palette-paleblue;
+}
+
+tr:nth-child(even) {
+  @apply bg-white;
+}
+tr:nth-child(odd) {
+  @apply bg-offwhite;
+}

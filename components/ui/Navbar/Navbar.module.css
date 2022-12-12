@@ -3,15 +3,15 @@
 }
 
 .link {
-  @apply inline-flex items-center leading-6 font-medium transition ease-in-out duration-75 cursor-pointer text-light rounded-md p-1 text-sm;
+  @apply inline-flex items-center leading-6 font-semibold transition ease-in-out duration-75 cursor-pointer rounded-md p-1 text-sm;
 }
 
 .link:hover {
-  @apply text-light;
+  @apply text-palette-orange;
 }
 
 .link:focus {
-  @apply outline-none text-light ring-2 ring-muted ring-opacity-50;
+  @apply outline-none text-palette-light ring-2 ring-muted ring-opacity-50;
 }
 
 .logo {

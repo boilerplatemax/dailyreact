@@ -1,10 +1,9 @@
-
 .root {
-  @apply bg-button-main text-light cursor-pointer inline-flex px-10 rounded-full leading-6  transition ease-in-out duration-150 shadow-sm font-semibold text-center justify-center uppercase py-4 border border-transparent items-center;
+  @apply bg-palette-dark text-palette-paleblue cursor-pointer inline-flex px-10 rounded-full leading-6  transition ease-in-out duration-150 shadow-sm font-semibold text-center justify-center uppercase py-4 border border-transparent items-center;
 }
 
 .root:hover {
-  @apply bg-button-hover text-white border border-white;
+  @apply bg-palette-main text-white border border-white;
 }
 
 .root:focus {
@@ -16,7 +15,7 @@
 }
 
 .loading {
-  @apply bg-loading text-light border-orange cursor-not-allowed;
+  @apply bg-loading text-palette-paleblue border-orange cursor-not-allowed;
 }
 
 .slim {

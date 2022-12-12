@@ -1,7 +1,5 @@
-
 .root {
-  
-  @apply bg-transparent text-light text-xs cursor-pointer rounded-2xl inline-flex px-4 leading-6 transition ease-in-out duration-150 shadow-sm font-semibold text-center justify-center uppercase py-2 border border-light items-center;
+  @apply bg-transparent text-palette-paleblue text-xs cursor-pointer  inline-flex px-4 leading-6 transition ease-in-out duration-150 shadow-sm font-semibold text-center justify-center uppercase py-2 border border-palette-paleblue items-center;
 }
 
 .root:hover {
@@ -20,19 +18,16 @@
 }
 
 .loading {
-  @apply bg-loading text-light cursor-not-allowed;
+  @apply bg-loading text-palette-paleblue cursor-not-allowed;
 }
 
 .slim {
   @apply py-2 transform-none normal-case;
 }
 .dark {
-
-
   @apply bg-transparent text-black border border-black;
 }
 .dark:hover {
-
   filter: grayscale(1);
   -webkit-transform: translateZ(0);
   -webkit-perspective: 1000;

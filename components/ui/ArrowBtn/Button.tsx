@@ -56,9 +56,7 @@ const Button = forwardRef<HTMLButtonElement, Props>((props, buttonRef) => {
           <LoadingDots />
         </i>
       )}
-      <span className='px-2'>
-      ➜
-      </span>
+      <span className="px-2">➜</span>
     </Component>
   );
 });

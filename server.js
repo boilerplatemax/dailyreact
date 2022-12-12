@@ -5,17 +5,15 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static('build'));
 
-
 app.get('/info', (request, response) => {
   const currentDate = new Date().toLocaleString();
   const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
-    response.send(
-      `
+  response.send(
+    `
             <div>
                 <p>${currentDate} (${timeZone})</p>
             </div>`
-    
   );
 });
 

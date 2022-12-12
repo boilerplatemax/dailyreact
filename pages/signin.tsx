@@ -6,7 +6,6 @@ import Logo from 'components/icons/Logo';
 import { getURL } from '@/utils/helpers';
 import { Auth, ThemeSupa } from '@supabase/auth-ui-react';
 
-
 const SignIn = () => {
   const router = useRouter();
   const user = useUser();

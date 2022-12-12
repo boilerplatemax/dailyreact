@@ -35,37 +35,35 @@ export const updateUserName = async (user: User, name: string) => {
     .eq('id', user.id);
 };
 
-export const updateStore = async (user: User, newStores:Array<any>) => {
+export const updateStore = async (user: User, newStores: Array<any>) => {
   await supabase
     .from('users')
     .update({
-      storedata:{
-        stores:newStores
+      storedata: {
+        stores: newStores
       }
     })
     .eq('id', user.id);
 };
 
 export const getMessage = async () => {
-  const { data, error } = await supabase
-  .from('publicdata')
-  .select()
-  return (data as any);
+  const { data, error } = await supabase.from('publicdata').select();
+  return data as any;
 };
-export const setMessage = async (note:string) => {
+export const setMessage = async (note: string) => {
   await supabase
     .from('publicdata')
     .update({
-      description:note
+      description: note
     })
-    .eq('id', 1)
+    .eq('id', 1);
 };
 
-export const updateAuth = async (id:string, token: string) => {
+export const updateAuth = async (id: string, token: string) => {
   await supabase
     .from('users')
     .update({
-      auth_token:token
+      auth_token: token
     })
     .eq('id', id);
 };
@@ -73,7 +71,7 @@ export const updateRefresh = async (user: User, token: string) => {
   await supabase
     .from('users')
     .update({
-      refresh_token:token
+      refresh_token: token
     })
     .eq('id', user.id);
 };
