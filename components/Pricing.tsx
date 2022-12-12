@@ -1,7 +1,7 @@
 import cn from 'classnames';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
-
+import Link from 'next/link'
 import Button from 'components/ui/Button';
 import { postData } from 'utils/helpers';
 import { getStripe } from 'utils/stripe-client';
@@ -48,7 +48,7 @@ export default function Pricing({ products }: Props) {
   if (!products.length)
     return (
       <section className="bg-offwhite text-dark">
-        <div className="max-w-6xl mx-auto py-8 sm:py-24 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto py-8 sm:py-24 px-4 sm:px-6 lg:px-8 ">
           <div className="sm:flex sm:flex-col sm:align-center"></div>
           <p className="text-6xl font-extrabold sm:text-center sm:text-6xl">
             No subscription pricing plans found. Create them in your{' '}
@@ -67,15 +67,15 @@ export default function Pricing({ products }: Props) {
     );
 
   return (
-    <section className="bg-indigo-500">
+    <section className="bg-offwhite text-dark">
       <div className="max-w-6xl mx-auto py-8 sm:py-24 px-4 sm:px-6 lg:px-8">
         <div className="sm:flex sm:flex-col sm:align-center">
           <h1 className="text-4xl font-extrabold sm:text-center sm:text-6xl text-dark">
-            Pricing Plans
+            {billingInterval==='month'?'Unlimited Web Package':'Simple Web Package'}
           </h1>
           <p className="mt-5 text-xl text-zinc-200 sm:text-center sm:text-2xl max-w-2xl m-auto">
             {billingInterval === 'month'
-              ? <span>The best <b>value</b> for business owners who want to grow their brand overtime</span>
+              ? <span>The best <b className='text-palette-orange'>value</b> for business owners who want to grow their brand overtime</span>
               : <span>A one-time purchase plan perfect for starting your business.</span>}
           </p>
           <div className="relative self-center mt-6 bg-indigo-900 rounded-lg p-0.5 flex sm:mt-8 border border-zinc-800">
@@ -136,14 +136,9 @@ export default function Pricing({ products }: Props) {
                   <div>
                     <ul className="text-palette-light">
                       <li>A stunning webpage</li>
-                      <li>Hosting and Domain</li>
-                      <li>SSL certification</li>
-                      <li>Online Store (if necessary)</li>
-                      <li>Access to 100,000+ stock images</li>
-                      <li className="line-through">Buisness Card design</li>
-                      <li className="line-through">Custom QR Code</li>
-                      <li className="line-through">Unlimited revisions</li>
-                      <li className="line-through">Blog posts</li>
+                      <li>SSL Certification</li>
+                      <li>Guidance setting up hosting & domain</li>
+
                     </ul>
                   </div>
                 </div>
@@ -164,7 +159,7 @@ export default function Pricing({ products }: Props) {
               <div
                 key={product.id}
                 className={cn(
-                  'rounded-lg  divide-y divide-zinc-600 bg-indigo-900',
+                  'rounded-lg  divide-y divide-zinc-600 bg-offwhite',
                   {
                     '': subscription
                       ? product.name === subscription?.prices?.products?.name
@@ -202,8 +197,43 @@ export default function Pricing({ products }: Props) {
               </div>
             );
           })}
+          {
+            billingInterval!=='month'&&
+          <div
+                className={cn(
+                  'rounded-lg  divide-y divide-zinc-600 bg-offwhite',
+                )}
+              >
+                <div className="p-6">
+                  <h2 className="text-2xl leading-6 font-semibold ">
+                    Website starter
+                  </h2>
+                  <p className="mt-4 text-zinc-300">You will recieve a stunning web page and guidance for how to sey up your site's hosting and domain.</p>
+                  <p className="mt-8">
+                    <span className="text-5xl font-extrabold white">
+                      TBD
+                    </span>
+                    <span className="text-base font-medium text-zinc-100">
+                      /Contact for Pricing
+                    </span>
+                  </p>
+                  <Link href="/contact">
+
+              
+                  <Button
+                    variant="slim"
+                    type="button"
+                    disabled={isLoading}
+                    className="mt-8 block w-full rounded-md py-2 text-sm font-semibold  text-center hover:bg-zinc-900"
+                  >
+                    Contact
+                  </Button>
+                  </Link>
+                </div>
+              </div>}
         </div>
-        <div>
+
+        {/* <div>
           <p className="mt-24 text-xs uppercase text-zinc-400 text-center font-bold tracking-[0.3em]">
             Brought to you by
           </p>
@@ -242,7 +272,7 @@ export default function Pricing({ products }: Props) {
               </a>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

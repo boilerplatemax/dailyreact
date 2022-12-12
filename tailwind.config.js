@@ -56,7 +56,7 @@ module.exports = {
 
       dark: '#164e63',
       muted: '#999999',
-      offwhite: '#dddddd'
+      offwhite: '#f2efe6'
     }
   }
 };

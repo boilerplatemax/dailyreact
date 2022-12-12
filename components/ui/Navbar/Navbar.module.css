@@ -11,7 +11,7 @@
 }
 
 .link:focus {
-  @apply outline-none text-palette-light ring-2 ring-muted ring-opacity-50;
+  @apply outline-none text-palette-orange ring-2 ring-orange ring-opacity-50;
 }
 
 .logo {

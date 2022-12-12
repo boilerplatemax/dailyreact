@@ -90,8 +90,8 @@ export default function Home() {
 
       {/* Our Work */}
       <div className="w-full mb-48">
-        <div className="grid lg:grid-cols-12 grid-cols-1 gap-4 ">
-          <div className="col-span-5 px-2 border border-palette-light rounded-lg h-32">
+        <div className="grid lg:grid-cols-12 grid-cols-1 gap-4 lg:ml-64">
+          {/* <div className="col-span-3 px-2 border border-palette-light rounded-lg h-32">
             <h2 className=' font-extrabold text-white uppercase text-xl'>What we offer</h2>
             <ul className='text-md'>
               <li>
@@ -104,17 +104,17 @@ export default function Home() {
                 
               </li>
             </ul>
-            {/* <ArrowBtn>View Work</ArrowBtn>
+            <ArrowBtn>View Work</ArrowBtn>
 
-            <p className="mt-5 mb-32">Our agencies specializes in so and so...</p> */}
+            <p className="mt-5 mb-32">Our agencies specializes in so and so...</p>
             
-          </div>
-          <div className="col-span-7 -mr-8 relative">
+          </div> */}
+          <div className="col-span-12 -mr-8 relative">
             <div className="flex flex-col bg-transparent m-auto p-auto mr-5">
-              <h1 className="flex mb-5 text-xl font-black">PORTFOLIO</h1>
-
+              <h1 className="flex mb-5 text-md font-extralight px-2">PORTFOLIO</h1>
+              {/* -mr-10 */}
               <div
-                className="flex overflow-x-scroll pb-4 -mr-10 scroll-smooth"
+                className="flex overflow-x-scroll pb-4 h-full scroll-box"
                 ref={container}
               >
                 <div className="flex flex-nowrap">
@@ -188,6 +188,57 @@ export default function Home() {
                     </ArrowBtn>
                   </div>
                 </div>
+
+                <div className="inline-block px-2 h-auto ">
+                  <div>
+                    <Image
+                      src={demo3}
+                      width={400}
+                      height={300}
+                      objectFit='cover'
+                      className='rounded-lg'
+                    />
+                  </div>
+                  <div className="p-4 overflow-hidden bg-transparent hover:shadow-xl transition-shadow duration-300 ease-in-out home__project relative">
+                    <h2 className='text-2xl font-bold '>Website Title</h2>
+                    <p>
+                      A little bit about the website. blah blah blah and Lorem Ipsum.
+                    </p>
+                    <ArrowBtn
+                      className="float-right"
+                      
+
+                    >
+                      visit site
+                    </ArrowBtn>
+                  </div>
+                </div>
+
+                <div className="inline-block px-2 h-auto ">
+                  <div>
+                    <Image
+                      src={demo3}
+                      width={400}
+                      height={300}
+                      objectFit='cover'
+                      className='rounded-lg'
+                    />
+                  </div>
+                  <div className="p-4 overflow-hidden bg-transparent hover:shadow-xl transition-shadow duration-300 ease-in-out home__project relative">
+                    <h2 className='text-2xl font-bold '>Website Title</h2>
+                    <p>
+                      A little bit about the website. blah blah blah and Lorem Ipsum.
+                    </p>
+                    <ArrowBtn
+                      className="float-right"
+                      
+
+                    >
+                      visit site
+                    </ArrowBtn>
+                  </div>
+                </div>
+
                 </div>
 
                 
@@ -216,7 +267,7 @@ export default function Home() {
     </div>
 
     <div className='bg-palette-main text-white p-8'>
-        <div className='grid grid-cols-1 md:grid-cols-2'>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:ml-64'>
 
           <div>
               <h2 className='text-4xl font-extrabold w-3/4 col-span-2'>The difference</h2>
@@ -232,7 +283,7 @@ export default function Home() {
       </div>
 
       <div className='bg-white text-palette-main p-8'>
-        <div className='grid grid-cols-1 md:grid-cols-2'>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:mr-64'>
           <div>
 
           </div>

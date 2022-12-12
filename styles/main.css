@@ -4,6 +4,7 @@
 body {
   font-family: 'DIN Alternate', sans-serif;
   font-size: 16px;
+  @apply bg-black
 }
 *,
 *:before,
@@ -59,7 +60,7 @@ a {
   display: none;
 }
 .home__project {
-  width: 400px !important;
+  width: 300px !important;
 }
 .no-ring {
   @apply ring-0;
@@ -70,28 +71,37 @@ a {
 .navbar__anim {
   @apply transform duration-500 ease-in-out;
 }
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   width: 10px;
 }
 
-/* Track */
+
 ::-webkit-scrollbar-track {
   @apply bg-palette-main;
 }
 
-/* Handle */
+
 ::-webkit-scrollbar-thumb {
   @apply bg-palette-light;
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   @apply bg-palette-paleblue;
-}
+} */
 
-tr:nth-child(even) {
-  @apply bg-white;
+
+.scroll-box::-webkit-scrollbar {
+  width: .4em; 
+  @apply bg-palette-paleblue
 }
-tr:nth-child(odd) {
-  @apply bg-offwhite;
+.scroll-box::-webkit-scrollbar,
+.scroll-box::-webkit-scrollbar-thumb {
+  overflow:visible;
+  border-radius: 4px;
+}
+.scroll-box::-webkit-scrollbar-thumb {
+  @apply bg-palette-light
+}
+.scroll-box::-webkit-scrollbar-thumb::after {
+  content:'scroll'
 }

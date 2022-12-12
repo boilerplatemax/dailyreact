@@ -4,13 +4,13 @@ type Props = {};
 
 const contact = (props: Props) => {
   return (
-    <section className="bg-white dark:bg-gray-900">
+    <section className="bg-offwhite ">
       <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
-        <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-dark dark:text-dark">
+        <h2 className="mb-4 text-5xl tracking-tight font-extrabold text-center text-dark dark:text-dark">
           Contact Us
         </h2>
         <p className="mb-8 lg:mb-16 font-light text-center text-dark dark:text-muted sm:text-xl">
-          Got a technical issue? Want to send feedback about a beta feature?
+          Want to learn more about the services that we provide? We are happy to any questions you may have!
           Need details about our Business plan? Let us know.
         </p>
         <form action="#" className="space-y-8">

@@ -5,7 +5,7 @@ import Logo from 'components/icons/Logo';
 import { useRouter } from 'next/router';
 import { useUser } from 'utils/useUser';
 import { useSupabaseClient } from '@supabase/auth-helpers-react';
-
+import { FaArrowRight as Right } from 'react-icons/fa';
 import { getCookies, getCookie, setCookie, deleteCookie } from 'cookies-next';
 
 interface Props {
@@ -22,16 +22,25 @@ const Navbar = ({ lrg }: Props) => {
       <a href="#skip" className="sr-only focus:not-sr-only">
         Skip to content
       </a>
-      {lrg&&<div className='w-full text-center font-extrabold bg-black text-palette-paleblue py-2'>Limited Time Offer <a href='/plans' className='underline font-light'>Get a fully designed website for $150 per month</a></div>}
+      {lrg&&router.pathname !== '/plans'&&<div className='w-full text-center font-extrabold bg-palette-main text-palette-paleblue py-2'>
+      <span className='p-1 bg-palette-paleblue w-auto m-4 rounded-full font-light text-black'>
+        New!
+      </span>
+      <span>Get a designed website, hosting & domain for $150/month </span>
+      <a href='/plans' className='font-light'>
+        <span>Learn More </span>
+        <Right className='inline'/>
+      </a>
+      </div>}
       <div
-        className={`mx-auto px-8 ${lrg && 'py-4'} navbar__anim ${
+        className={`mx-auto px-8 ${lrg&&'py-4'} navbar__anim ${
           router.pathname !== '/'
-            ? 'bg-white text-dark'
+            ? `${lrg ? 'bg-palette-main':'bg-offwhite text-dark '} `
             : 'text-palette-paleblue'
         }`}
       >
         
-        <div className="flex justify-between align-center flex-row py-4 md:py-6 relative">
+        <div className={`flex justify-between align-center flex-row py-4 md:py-6 relative ${lrg&&'text-white'}`}>
           
           <div className="flex flex-1 items-center">
             <Link href="/">
