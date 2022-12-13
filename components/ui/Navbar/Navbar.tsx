@@ -3,7 +3,7 @@ import s from './Navbar.module.css';
 
 import Logo from 'components/icons/Logo';
 import { useRouter } from 'next/router';
-import { useUser } from 'utils/useUser';
+import { useUser } from '@/utils/useUser'
 import { useSupabaseClient } from '@supabase/auth-helpers-react';
 import { FaArrowRight as Right } from 'react-icons/fa';
 import { getCookies, getCookie, setCookie, deleteCookie } from 'cookies-next';
